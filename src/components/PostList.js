@@ -3,7 +3,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import PostItem from './PostItem';
-import { fetchPopularPosts, searchPosts } from '../features/posts/postsSlice';
+import { fetchPopularPosts} from '../features/posts/postsSlice';
 
 function PostList() {
   const dispatch = useDispatch();
@@ -17,6 +17,7 @@ function PostList() {
       dispatch(fetchPopularPosts());
     }
   }, [dispatch, location.pathname]);
+
 
   const displayPosts = location.pathname === '/search' ? searchResults : posts;
 
