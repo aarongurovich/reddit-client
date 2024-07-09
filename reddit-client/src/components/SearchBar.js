@@ -1,25 +1,30 @@
 // src/components/SearchBar.js
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function SearchBar({ onSearch }) {
   const [query, setQuery] = useState('');
+  const navigate = useNavigate();
 
-  const handleSearch = () => {
-    if (query.trim() !== '') {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (query.trim()) {
       onSearch(query);
+      navigate('/search');
     }
   };
 
   return (
-    <div className="search-bar">
+    <form onSubmit={handleSubmit} className="search-bar-container">
       <input
         type="text"
         value={query}
-        onChange={e => setQuery(e.target.value)}
-        placeholder="Search posts..."
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="Search Reddit"
+        className="search-bar"
       />
-      <button onClick={handleSearch}>Search</button>
-    </div>
+      <button type="submit">Search</button>
+    </form>
   );
 }
 

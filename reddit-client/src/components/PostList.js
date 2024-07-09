@@ -1,22 +1,42 @@
 // src/components/PostList.js
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import PostItem from './PostItem';
+import SearchBar from './SearchBar';
+import { fetchPopularPosts, searchPosts } from '../features/posts/postsSlice';
 
 function PostList() {
-  const [posts, setPosts] = useState([]);
+  const dispatch = useDispatch();
+  const posts = useSelector((state) => state.posts.posts);
+  const searchResults = useSelector((state) => state.posts.searchResults);
+  const isLoading = useSelector((state) => state.posts.isLoading);
+  const location = useLocation();
 
-  useEffect(() => {
-    axios.get('https://www.reddit.com/r/popular.json')
-      .then(response => setPosts(response.data.data.children))
-      .catch(error => console.error('Error fetching posts:', error));
-  }, []);
+  React.useEffect(() => {
+    if (location.pathname === '/') {
+      dispatch(fetchPopularPosts());
+    }
+  }, [dispatch, location.pathname]);
+
+  const handleSearch = (query) => {
+    dispatch(searchPosts(query));
+  };
+
+  const displayPosts = location.pathname === '/search' ? searchResults : posts;
 
   return (
     <div>
-      {posts.map(post => (
-        <PostItem key={post.data.id} post={post.data} />
-      ))}
+      <SearchBar onSearch={handleSearch} />
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <div className="post-list">
+          {displayPosts.map((post) => (
+            <PostItem key={post.data.id} post={post.data} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

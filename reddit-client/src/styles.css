@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap');
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  h1{
+    color: #007bff !important;
+    font-family: Ga Maamli;
+    font-size: 30px !important;
+  }
+  .header {
+    background-color: #000000;
+    padding: 10px 20px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .logo {
+    height: 40px;
+    margin-right: 20px;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+  
+  .nav-links h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #ffffff;
+  }
+  
+  .search-bar {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #007bff;
+    background-color: #1a1a1b;
+    color: #ffffff;
+    margin-right: 20px;
+  }
+  
+  .search-bar::placeholder {
+    color: #818384;
+  }
+  
+  .nav-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .nav-buttons .get-app,
+  .nav-buttons .log-in {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  .nav-buttons .get-app:hover,
+  .nav-buttons .log-in:hover {
+    background-color: #0056b3;
+  }
+  
+  .nav-buttons .log-in {
+    background-color: #ff4500;
+    color: #ffffff;
+  }
+  
+  .nav-buttons .log-in:hover {
+    background-color: #e03e00;
+  }
+  
+  footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  .main-layout {
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+  }
+  
+  .left-sidebar,
+  .right-sidebar {
+    width: 200px;
+    padding: 20px;
+    background-color: #1a1a1b;
+    border-right: 1px solid #343536;
+  }
+  
+  .right-sidebar {
+    border-right: none;
+    border-left: 1px solid #343536;
+  }
+  
+  .main-content {
+    flex: 1;
+    max-width: 800px;
+    padding: 20px;
+  }
+  
+  .post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .post-item {
+    background-color: #1a1a1b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #343536;
+  }
+  
+  .post-item .post-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .post-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .post-item a {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2em;
+  }
+  
+  .post-item a:hover {
+    text-decoration: underline;
+  }
+  
+  .post-item p {
+    margin: 0;
+    color: #818384;
+  }
+  
+  .post-detail {
+    background-color: #1a1a1b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #343536;
+  }
+  
+  .comment {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+  }
+  
+  .search-bar-container {
+    margin: 20px 0;
+  }
+  
+  .search-bar-container input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .search-bar-container button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .search-bar-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .sidebar {
+    background-color: #1a1a1b;
+    color: #d7dadc;
+  }
+  
+  .sidebar h3 {
+    margin-top: 0;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin: 10px 0;
+    color: #0056b3;
+  }
+  
+  .sidebar ul li:hover {
+    color: #d7dadc;
+    cursor: pointer;
+    
+  }
+  
+  .sidebar ul li a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .sidebar ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .sidebar-link {
+    background: none;
+    border: none;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1em;
+  }
+  
+  .sidebar-link:hover {
+    text-decoration: underline;
+
+  }
+
+  
