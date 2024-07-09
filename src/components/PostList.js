@@ -17,11 +17,7 @@ function PostList() {
       dispatch(fetchPopularPosts());
     }
   }, [dispatch, location.pathname]);
-
-  const handleSearch = (query) => {
-    dispatch(searchPosts(query));
-  };
-
+x
   const displayPosts = location.pathname === '/search' ? searchResults : posts;
 
   return (
