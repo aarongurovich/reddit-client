@@ -17,7 +17,7 @@ function PostList() {
       dispatch(fetchPopularPosts());
     }
   }, [dispatch, location.pathname]);
-x
+
   const displayPosts = location.pathname === '/search' ? searchResults : posts;
 
   return (
