@@ -18,6 +18,9 @@ function PostList() {
     }
   }, [dispatch, location.pathname]);
 
+  const handleSearch = (query) => {
+    dispatch(searchPosts(query));
+  };
 
   const displayPosts = location.pathname === '/search' ? searchResults : posts;
 
