@@ -1,4 +1,3 @@
-// src/components/PostList.js
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
@@ -18,9 +17,6 @@ function PostList() {
     }
   }, [dispatch, location.pathname]);
 
-  const handleSearch = (query) => {
-    dispatch(searchPosts(query));
-  };
 
   const displayPosts = location.pathname === '/search' ? searchResults : posts;
 

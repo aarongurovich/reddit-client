@@ -1,4 +1,3 @@
-// src/features/posts/postsSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -9,8 +8,7 @@ const initialState = {
   error: null,
 };
 
-// Thunks for fetching posts
-export const fetchPopularPosts = createAsyncThunk('posts/fetchPopularPosts', async () => {
+  export const fetchPopularPosts = createAsyncThunk('posts/fetchPopularPosts', async () => {
   const response = await axios.get('https://www.reddit.com/r/popular.json');
   return response.data.data.children;
 });

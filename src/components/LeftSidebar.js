@@ -1,4 +1,3 @@
-// src/components/LeftSidebar.js
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { searchPosts } from '../features/posts/postsSlice';
